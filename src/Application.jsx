@@ -24,7 +24,7 @@ function Application() {
         if (response.ok) {
           return response.json();
         } else {
-          throw new Error(`Server error: ${response.status}`);
+          throw new Error(`Fallo al obtener datos del candidato: ${response.status}`);
         }
       })
       .then((result) => {

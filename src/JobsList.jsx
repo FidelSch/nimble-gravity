@@ -24,7 +24,7 @@ function JobsList({ candidateData }) {
         if (response.ok) {
           return response.json();
         } else {
-          throw new Error(`Server error: ${response.status}`);
+          throw new Error(`Fallo al obtener lista de posiciones: ${response.status}`);
         }
       })
       .then((data) => {
