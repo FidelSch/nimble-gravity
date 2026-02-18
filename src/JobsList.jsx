@@ -59,6 +59,11 @@ function JobsList({ candidateData }) {
       return;
     }
 
+    if (!candidateData?.applicationId) {
+      alert('Falta applicationId en candidateData');
+      return;
+    }
+
     setSubmitting((prev) => ({ ...prev, [jobId]: true }));
     setSuccessMessages((prev) => ({ ...prev, [jobId]: null }));
 
@@ -72,6 +77,7 @@ function JobsList({ candidateData }) {
           uuid: candidateData.uuid,
           jobId: jobId,
           candidateId: candidateData.candidateId,
+          applicationId: candidateData.applicationId,
           repoUrl: repoUrl,
         }),
       });
