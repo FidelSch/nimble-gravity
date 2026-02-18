@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import JobsList from './JobsList';
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 const EMAIL_ADDR = import.meta.env.VITE_EMAIL_ADDR;
@@ -45,6 +46,7 @@ function Application() {
         <h2>Bienvenido, {candidateData.firstName} {candidateData.lastName}</h2>
         <p>Email: {candidateData.email}</p>
       </div>
+      <JobsList candidateData={candidateData} />
     </div>
   );
 }
